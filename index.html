@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>إلى هجورتي 💜</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at top,#f9eaff,#eadcff 45%,#d8c2f4);color:#55336e;display:flex;align-items:center;justify-content:center;padding:22px}
+main{width:min(680px,100%);background:#ffffffc9;border:1px solid #fff;border-radius:28px;padding:28px 22px;text-align:center;box-shadow:0 18px 55px #76519b25}
+h1{font-size:clamp(28px,6vw,44px);margin:8px 0;color:#7b45a5} .heart{font-size:42px;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12)}}
+p{line-height:2;font-size:18px}.sub{font-size:14px;color:#9877ae}
+.buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:22px 0}
+button{border:0;border-radius:16px;padding:14px 12px;background:#8d5ab7;color:white;font-size:16px;cursor:pointer;box-shadow:0 5px 14px #8d5ab725}
+button:hover{background:#704098}.message{min-height:130px;background:#f7efff;border:1px solid #ead8fa;border-radius:20px;padding:18px;margin-top:15px;display:flex;align-items:center;justify-content:center;white-space:pre-line;font-size:18px;line-height:2}
+footer{margin-top:22px;font-size:14px;color:#9877ae}
+</style>
+</head>
+<body><main>
+<div class="heart">💜</div>
+<h1>إلى هجورتي</h1>
+<p>حتى لو بيننا مسافات، فيه أشياء ما يقدر البعد يوصل لها…<br>مثل محبتي لك، ومكانك بقلبي.</p>
+<div class="sub">اختاري زر، وكل زر مخبّي لك كلام من قلبي ✨</div>
+<div class="buttons">
+<button onclick="show(0)">إذا اشتقتِ لي 🥹</button>
+<button onclick="show(1)">إذا كان يومك صعب 🤍</button>
+<button onclick="show(2)">إذا احتجتِ حضن 🫂</button>
+<button onclick="show(3)">أسباب أحبك 💌</button>
+<button onclick="show(4)">افتحي المفاجأة 🎁</button>
+</div>
+<div class="message" id="message">اضغطي على أحد الأزرار… وخلي قلبك يقرأ 💗</div>
+<footer>صُنعت بكل الحب، من شخص يحبك كثيرًا 💜</footer>
+</main>
+<script>
+const notes=[
+"هجورتي، لو تعرفين قد إيش أشتاق لك…\nأشتاق لسوالفك، لضحكتك، ولكل لحظة تجمعنا.\nالمسافة بيننا بعيدة، بس أنتِ قريبة من قلبي دائمًا. 💜",
+"يا حبيبتي، مو لازم تكونين قوية طول الوقت.\nخذي نفس، وارفقي بقلبك، وتذكري إن فيه قلب يحبك ويتمنى لك الخير.\nبكرة بإذن الله يكون ألطف عليك. 🤍",
+"اعتبري هالكلمات حضن طويل ودافي…\nحضن يقول لك: أنا هنا، أحبك، ومهما صار ما يقل مكانك بقلبي.\nلو أقدر أوصل لك الآن، كان حضنتك لين تبتسمين. 🫂",
+"أحبك لأنك أنتِ.\nلأن وجودك يفرق، وصوتك يونس، وضحكتك تسعدني.\nأحب تفاصيلك الصغيرة، وصدقك، والطريقة اللي صرتِ فيها جزءًا من أيامي.\nوأحب إنك هجورتي… وبس. 💜",
+"هجورتي الغالية…\nلو كان بإمكاني أهديك الدنيا، أهديتك إياها.\nلكن بما إن الهدية وصلت لك على شكل صفحة، خليها تذكير دائم:\nأنتِ محبوبة، وغالية، ولك مكان ما يشبهه أحد.\n\nأحبك أكثر مما تعرفين… يا أجمل هدية في حياتي. 💜😭"
+];
+function show(i){document.getElementById('message').textContent=notes[i]}
+</script></body></html>
