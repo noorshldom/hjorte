@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>موعدنا 13/11 💜</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:20px;font-family:Tahoma,Arial,sans-serif;color:#56366d;background:linear-gradient(145deg,#fbf5ff,#eadcff,#d7c0f1)}
+main{max-width:720px;margin:20px auto;background:#ffffffdf;border:1px solid white;border-radius:28px;padding:25px 20px;text-align:center;box-shadow:0 15px 45px #68428b24}
+h1{color:#804ba6;font-size:clamp(30px,7vw,44px);margin:8px 0}h2{font-size:21px;color:#7b4b9c;margin:4px 0 12px}
+p{line-height:2;font-size:17px}.heart{font-size:48px}.section{background:#f8f0ff;border:1px solid #ead9f7;border-radius:20px;padding:18px;margin:18px 0}
+button{border:0;border-radius:15px;padding:13px 18px;background:#8956ad;color:white;font-size:16px;margin:5px;cursor:pointer}
+.message{background:white;border-radius:16px;padding:16px;line-height:2;min-height:65px;margin-top:12px;white-space:pre-line}
+.hint{font-size:13px;color:#997eaa}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gallery img{width:100%;height:190px;object-fit:cover;border-radius:15px;background:#e9d9f4}
+audio{width:100%;margin:10px 0}footer{margin:24px 0 5px;color:#9879aa;font-size:14px}
+#locked{min-height:75vh;display:flex;flex-direction:column;justify-content:center}
+#count{font-size:clamp(28px,8vw,44px);font-weight:bold;color:#8956ad;margin:18px 0}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<section id="locked">
+<div class="heart">💜🔒</div>
+<h1>إلى هجورتي</h1>
+<p>وصلتِ لمكان مخبّي لك فيه شيء من قلبي…<br>بس للحكايات الجميلة موعدها، وموعد هديتك يوم 13/11/2026 🥹</p>
+<div id="count">ننتظر يومنا الجميل…</div>
+<p>ارجعي في يومنا، وبتلقين كلامًا كتبته لك بكل الحب.<br>إلى ذلك الوقت، خلي فضولك صاحي يا هجورتي 🤍</p>
+<div class="hint">هذا المكان ينتظر يوم ذكرى لقائنا الأول</div>
+</section>
+
+<section id="gift" class="hidden">
+<div class="heart">💜</div>
+<h1>كل عام وحكايتنا أجمل يا هجورتي</h1>
+<p>13/11/2026<br>في مثل هذا اليوم بدأت حكاية صارت من أجمل الأشياء في قلبي…<br>وهذي هديتي لك، يا أجمل صدفة وأغلى معرفة.</p>
+<div class="section">
+<h2>رسائل من قلبي 💌</h2>
+<button onclick="show(0)">إذا اشتقتِ لي 🥹</button><button onclick="show(1)">إذا كان يومك صعب 🤍</button>
+<button onclick="show(2)">إذا احتجتِ حضن 🫂</button><button onclick="show(3)">أسباب أحبك</button>
+<button onclick="show(4)">المفاجأة 🎁</button>
+<div class="message" id="message">اضغطي على أحد الأزرار… وخلي قلبك يقرأ 💗</div>
+</div>
+<div class="section">
+<h2>ذكرياتنا 📸</h2><p class="hint">ارفعي صورك باسم photo1.jpg و photo2.jpg</p>
+<div class="gallery"><img src="photo1.jpg" alt="ذكرياتنا الأولى"><img src="photo2.jpg" alt="ذكرياتنا الثانية"></div>
+</div>
+<div class="section"><h2>أغنية أهديها لك 🎵</h2><p class="hint">ارفعي الأغنية باسم song.mp3</p>
+<audio controls><source src="song.mp3" type="audio/mpeg"></audio></div>
+<div class="section"><h2>صوتي لك 🎙️</h2><p class="hint">ارفعي تسجيلك باسم myvoice.mp3</p>
+<audio controls><source src="myvoice.mp3" type="audio/mpeg"></audio></div>
+<div class="section"><h2>رسالة سرية لك 💜</h2>
+<button onclick="document.getElementById('secret').hidden=false">اضغطي على القلب وافتحيها</button>
+<div class="message" id="secret" hidden>هجورتي، في 13/11 عرفتك، ومن يومها صار لهذا التاريخ مكان مختلف بقلبي. شكرًا لأنك صرتِ جزءًا من حكايتي. أحبك كثيرًا 💜</div></div>
+<footer>من قلب يحبك… في يومنا وكل يوم 💜</footer>
+</section>
+</main>
+<script>
+const release = new Date(2026, 10, 13, 0, 0, 0); // منتصف الليل حسب توقيت جهاز من تفتح الموقع
+function updateGate(){
+ const now=new Date(), locked=now<release;
+ document.getElementById('locked').classList.toggle('hidden',!locked);
+ document.getElementById('gift').classList.toggle('hidden',locked);
+ if(locked){
+  const diff=release-now;
+  const days=Math.floor(diff/86400000), hours=Math.floor(diff%86400000/3600000), mins=Math.floor(diff%3600000/60000), secs=Math.floor(diff%60000/1000);
+  document.getElementById('count').textContent=`باقي ${days} يوم و ${hours} ساعة و ${mins} دقيقة و ${secs} ثانية 💜`;
+ }
+}
+const notes=[
+"هجورتي، لو تعرفين قد إيش أشتاق لك…\nأشتاق لسوالفك، لضحكتك، ولكل لحظة تجمعنا.\nالمسافة بعيدة، بس أنتِ قريبة من قلبي دائمًا. 💜",
+"مو لازم تكونين قوية طول الوقت.\nخذي نفس وارفقي بقلبك، وتذكري إن فيه قلب يحبك ويتمنى لك الخير.\nبكرة بإذن الله يكون ألطف عليك. 🤍",
+"اعتبري هالكلمات حضن طويل ودافي…\nأنا هنا أحبك، ومهما صار ما يقل مكانك بقلبي.\nلو أقدر أوصل لك الآن كان حضنتك لين تبتسمين. 🫂",
+"أحبك لأنك أنتِ؛ لأن وجودك يفرق، وصوتك يونس، وضحكتك تسعدني.\nأحب تفاصيلك الصغيرة، وصدقك، والطريقة اللي صرتِ فيها جزءًا من أيامي.\nوأحب إنك هجورتي… وبس. 💜",
+"هجورتي الغالية…\nفي 13/11 بدأت حكاية ما كنت أعرف إنها بتصير بهالغلا.\nأنتِ محبوبة وغالية ولك مكان ما يشبهه أحد.\nأحبك أكثر مما تعرفين… يا أجمل هدية في حياتي. 💜😭"
+];
+function show(i){document.getElementById('message').textContent=notes[i]}
+updateGate();setInterval(updateGate,1000);
+</script>
+</body></html>
